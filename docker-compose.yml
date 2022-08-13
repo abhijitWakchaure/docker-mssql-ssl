@@ -1,0 +1,25 @@
+version: '3'
+services:
+
+  db:
+    build: 
+      context: .
+    restart: always
+    volumes:
+      - mssql-ssl-data:/var/opt/mssql
+      - mssql-user-data:/var/opt/sqlserver
+      # - ./custom.cnf:/etc/mysql/conf.d/custom.cnf
+    ports:
+      - 1433:1433
+      - 1434:8000
+    environment:
+      TZ: "Asia/Kolkata"
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Tibco123"
+      MSSQL_BACKUP_DIR: "/var/opt/sqlserver"
+      MSSQL_DATA_DIR: "/var/opt/sqlserver"
+      MSSQL_LOG_DIR: "/var/opt/sqlserver"
+
+volumes:
+  mssql-ssl-data:
+  mssql-user-data:
