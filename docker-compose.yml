@@ -14,8 +14,8 @@ services:
       - 1434:8000
     environment:
       TZ: "Asia/Kolkata"
-      ACCEPT_EULA: "Y"
       SA_PASSWORD: "Tibco123"
+      DEV_MODE: "true"
       MSSQL_BACKUP_DIR: "/var/opt/sqlserver"
       MSSQL_DATA_DIR: "/var/opt/sqlserver"
       MSSQL_LOG_DIR: "/var/opt/sqlserver"
